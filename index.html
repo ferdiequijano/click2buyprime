@@ -1,1 +1,74 @@
-<h1>HELLLO</h1>
+<html>
+  <head>
+    <style>
+      .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 0.5fr 1.5fr 0.5fr 1.25fr 1.25fr;
+        grid-template-areas:
+          'topper topper topper'
+          'nav nav nav'
+          'heropic heropic herotext'
+          'freeshipping freeshipping freeshipping'
+          'inkcartridge lasertoner printer'
+          'footerpic footertext footertext';
+      }
+
+      #topper {
+        background: #f2dbae;
+        grid-area: topper;
+      }
+      nav {
+        background: #ee2eaf;
+        grid-area: nav;
+      }
+      #heropic {
+        background: #684592;
+        grid-area: heropic;
+      }
+      #herotext {
+        background: #03901a;
+        grid-area: herotext;
+      }
+      #freeshipping {
+        background: #e5475f;
+        grid-area: freeshipping;
+      }
+      #inkcartridge {
+        background: #85ed52;
+        grid-area: inkcartridge;
+      }
+      #lasertoner {
+        background: #a2c0c6;
+        grid-area: lasertoner;
+      }
+      #printer {
+        background: #f505f4;
+        grid-area: printer;
+      }
+      #footerpic {
+        background: #a44317;
+        grid-area: footerpic;
+      }
+      #footertext {
+        background: #1241ec;
+        grid-area: footertext;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="topper">Click2Buy's Response to COVID-19</div>
+      <nav>Navigation Bar</nav>
+      <div id="heropic">Hero Pic</div>
+      <div id="herotext">Hero Text</div>
+      <div id="freeshipping">Free Shipping - Order Today</div>
+      <div id="inkcartridge">Ink Cartridges</div>
+      <div id="lasertoner">Laser Toner</div>
+      <div id="printer">Printers</div>
+      <div id="footerpic">Footer Pic</div>
+      <div id="footertext">Footer Text</div>
+    </div>
+  </body>
+</html>
