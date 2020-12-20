@@ -1,12 +1,20 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      html {
+        font-family: 'Roboto', sans-serif;
+      }
       .container {
         display: grid;
         height: 100vh;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.2fr 0.5fr 1.5fr 0.5fr 1.25fr 1.25fr;
+        grid-template-rows: 0.2fr 0.5fr 517px 0.5fr 338px 1.25fr;
         grid-template-areas:
           'topper topper topper'
           'nav nav nav'
@@ -17,35 +25,50 @@
       }
 
       #topper {
-        background: #f2dbae;
+        background: #684592;
         grid-area: topper;
+        text-align: right;
       }
       nav {
         background: #ee2eaf;
         grid-area: nav;
       }
       #heropic {
-        background: #684592;
+        background: #f2dbae;
+        background-image: url('heropic.jpg');
+        background-size: 100% 100%;
         grid-area: heropic;
       }
       #herotext {
         background: #03901a;
+        background-image: url('herotext.jpg');
+        background-size: 100% 100%;
         grid-area: herotext;
       }
       #freeshipping {
-        background: #e5475f;
+        background: #e0e0e0;
         grid-area: freeshipping;
+        text-align: center;
       }
       #inkcartridge {
-        background: #85ed52;
+        background-image: url('inkcartridges.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 337px 338px;
         grid-area: inkcartridge;
       }
       #lasertoner {
-        background: #a2c0c6;
+        background-image: url('lastertoner.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 337px 338px;
         grid-area: lasertoner;
       }
       #printer {
-        background: #f505f4;
+        background-image: url('printers.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 337px 338px;
         grid-area: printer;
       }
       #footerpic {
@@ -56,18 +79,42 @@
         background: #1241ec;
         grid-area: footertext;
       }
+
+      #freeshipping span {
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 4px;
+        padding: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
+
+      #topper span {
+        color: white;
+        font-style: italic;
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        text-align: right;
+        padding: 6px;
+        padding-right: 36px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div id="topper">Click2Buy's Response to COVID-19</div>
+      <div id="topper"><span>CLICK2BUY&apos;S RESPONSE TO COVID19</span></div>
       <nav>Navigation Bar</nav>
-      <div id="heropic">Hero Pic</div>
-      <div id="herotext">Hero Text</div>
-      <div id="freeshipping">Free Shipping - Order Today</div>
-      <div id="inkcartridge">Ink Cartridges</div>
-      <div id="lasertoner">Laser Toner</div>
-      <div id="printer">Printers</div>
+      <div id="heropic"></div>
+      <div id="herotext"></div>
+      <div id="freeshipping"><span>FREE SHIPPING - ORDER TODAY</span></div>
+      <div id="inkcartridge"></div>
+      <div id="lasertoner"></div>
+      <div id="printer"></div>
       <div id="footerpic">Footer Pic</div>
       <div id="footertext">Footer Text</div>
     </div>
