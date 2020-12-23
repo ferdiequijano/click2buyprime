@@ -98,12 +98,43 @@
         vertical-align: middle;
         line-height: normal;
       }
+
+      /* Style the links inside the navigation bar */
+      nav a {
+        float: right;
+        color: #f2f2f2;
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        text-align: center;
+        padding: 32px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      /* Change the color of links on hover */
+      nav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Add a color to the active/current link */
+      nav a.active {
+        color: #18ffff;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div id="topper"><span>CLICK2BUY&apos;S RESPONSE TO COVID19</span></div>
-      <nav><img src="logo.png" height="10%" /></nav>
+      <nav>
+        <img style="float: left" src="logo.png" height="90px" width="90px" />
+        <a href="#shop">CART</a>
+        <a href="#shop">LOGIN</a>
+        <a href="#shop">EXCLUSIVE DEALS</a>
+        <a href="#shop">ELIGIBLE PRINTERS</a>
+        <a href="#shop">SHOP</a>
+        <a class="active">HOME</a>
+      </nav>
       <div id="heropic">
         <img src="heropic.png" alt="15% OFF" />
       </div>
