@@ -35,6 +35,7 @@
       }
       #heropic {
         grid-area: heropic;
+        background: #65d6e7;
       }
       #herotext {
         background: #03901a;
@@ -46,6 +47,7 @@
         background: #e0e0e0;
         grid-area: freeshipping;
         text-align: center;
+        margin-bottom: 50px;
       }
       #inkcartridge {
         background-image: url('inkcartridges.jpg');
@@ -70,9 +72,13 @@
       }
       #footerpic {
         grid-area: footerpic;
+        background-color: #efefef;
+        margin-top: 50px;
       }
       #footertext {
         grid-area: footertext;
+        background-color: #efefef;
+        margin-top: 50px;
       }
 
       #freeshipping span {
@@ -106,20 +112,49 @@
         font-size: 10px;
         letter-spacing: 2.5px;
         text-align: center;
-        padding: 32px 16px;
+        padding: 32px 24px;
         text-decoration: none;
         font-size: 17px;
       }
 
       /* Change the color of links on hover */
       nav a:hover {
-        background-color: #ddd;
-        color: black;
+        color: #18ffff;
       }
 
       /* Add a color to the active/current link */
       nav a.active {
         color: #18ffff;
+      }
+
+      nav a img,
+      nav a {
+        display: inline-block;
+      }
+
+      #footertext ul {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 0;
+      }
+
+      #footertext li {
+        display: inline-block;
+        width: 170px;
+        margin-right: 110px;
+        margin-bottom: 16px;
+      }
+      #footertext ul.contacts li {
+        width: 250px;
+      }
+      hr {
+        border: none;
+        height: 2px;
+        color: #333; /* old IE */
+        background-color: #333; /* Modern Browsers */
+        margin-right: 40px;
+        width: 96%;
       }
     </style>
   </head>
@@ -128,6 +163,7 @@
       <div id="topper"><span>CLICK2BUY&apos;S RESPONSE TO COVID19</span></div>
       <nav>
         <img style="float: left" src="logo.png" height="90px" width="90px" />
+        <a style="padding-left: 0"><img src="cart2.png" height="24px" width="20px" /></a>
         <a href="#shop">CART</a>
         <a href="#shop">LOGIN</a>
         <a href="#shop">EXCLUSIVE DEALS</a>
@@ -144,7 +180,31 @@
       <div id="lasertoner"></div>
       <div id="printer"></div>
       <div id="footerpic"><img src="footer.png" /></div>
-      <div id="footertext">Footer Text</div>
+      <div id="footertext">
+        <br />
+        <br />
+        <br />
+        <br />
+        <ul>
+          <li>About click2buy prime</li>
+          <li>Help &amp; settings</li>
+          <li>Contact us</li>
+          <li>Terms &amp; conditions</li>
+          <li style="margin-right: 120px">Delivery schedule</li>
+          <li>Privacy policy</li>
+          <li>Modes of payment</li>
+        </ul>
+        <ul>
+          <li style="width: 100%; text-align: right; margin: 0; padding-right: 40px">All content copyright 2021</li>
+        </ul>
+        <hr />
+        <ul class="contacts">
+          <li>MANILA (+632) 8689-5000</li>
+          <li>Email: info@ics.com.ph</li>
+          <li>CEBU (+632) 260-2071</li>
+          <li>Toll-Free No.: 1-800-10-1427273</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
