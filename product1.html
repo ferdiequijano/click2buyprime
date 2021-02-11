@@ -1,277 +1,1851 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      html {
-        font-family: 'Roboto', sans-serif;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      .container {
-        display: grid;
-        height: auto;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas:
-          'topper topper topper'
-          'nav nav nav'
-          'freeshipping freeshipping freeshipping'
-          'footerpic footertext footertext';
-      }
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+  rel="stylesheet"
+  />
 
-      #topper {
-        background: #684592;
-        grid-area: topper;
-        text-align: right;
-      }
-      nav {
-        background: #311432;
-        grid-area: nav;
-      }
-      #footerpic {
-        grid-area: footerpic;
-        background-color: #efefef;
-        margin-top: 50px;
-      }
-      #footertext {
-        grid-area: footertext;
-        background-color: #efefef;
-        margin-top: 50px;
-      }
+  <style>
+    html {
+      font-family: 'Roboto', sans-serif;
+      max-width: 1280px;
+      margin: 0 auto;
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%
+    }
 
-      #freeshipping {
-        grid-area: freeshipping;
-        margin: 25px 60px;
-      }
+    .clearfix {
+      *zoom:1
+    }
 
-      #freeshipping p {
-        color: black;
-        font-weight: 500;
-        font-size: 26px;
-        letter-spacing: 6px;
-        display: inline-block;
-        vertical-align: middle;
-        line-height: normal;
-      }
+    * {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
 
-      #freeshipping img {
-        display: inline-block;
-        vertical-align: top;
-      }
+    .container {
+      display: grid;
+      height: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas:
+      'topper topper topper'
+      'nav nav nav'
+      'freeshipping freeshipping freeshipping'
+      'footerpic footertext footertext';
+    }
 
-      #freeshipping .item-name {
-        display: inline-block;
-        margin: 16px;
-      }
+    #topper {
+      background: #684592;
+      grid-area: topper;
+      text-align: right;
+    }
+    nav {
+      background: #311432;
+      grid-area: nav;
+    }
+    #footerpic {
+      grid-area: footerpic;
+      background-color: #efefef;
+      margin-top: 50px;
+    }
+    #footertext {
+      grid-area: footertext;
+      background-color: #efefef;
+      margin-top: 50px;
+    }
 
-      #freeshipping .item-description {
-        margin-top: 80px;
-      }
+    #freeshipping {
+      grid-area: freeshipping;
+      margin-top: 50px;
+    }
 
-      #freeshipping .item-description p {
-        font-size: 13px;
-        font-weight: 400;
-        display: block;
-        letter-spacing: 0px;
-        padding: 4px;
-      }
+    
 
-      #freeshipping .item-description h3 {
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-align: center;
-      }
+    #topper span {
+      color: white;
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-align: right;
+      padding: 6px;
+      padding-right: 36px;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
 
-      #freeshipping h1 {
-        font-size: 20px;
-        font-weight: 400;
-      }
+    /* Style the links inside the navigation bar */
+    nav a {
+      float: right;
+      color: #f2f2f2;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-align: center;
+      padding: 32px 24px;
+      text-decoration: none;
+      font-size: 17px;
+    }
 
-      #freeshipping h2 {
-        font-size: 30px;
-        font-weight: 500;
-        color: #fa8128;
-      }
+    /* Change the color of links on hover */
+    nav a:hover {
+      color: #18ffff;
+    }
 
-      #topper span {
-        color: white;
-        font-style: italic;
-        font-size: 12px;
-        letter-spacing: 2.5px;
-        text-align: right;
-        padding: 6px;
-        padding-right: 36px;
-        display: inline-block;
-        vertical-align: middle;
-        line-height: normal;
-      }
+    /* Add a color to the active/current link */
+    nav a.active {
+      color: #18ffff;
+    }
 
-      /* Style the links inside the navigation bar */
-      nav a {
-        float: right;
-        color: #f2f2f2;
-        font-size: 10px;
-        letter-spacing: 2.5px;
-        text-align: center;
-        padding: 32px 24px;
-        text-decoration: none;
-        font-size: 17px;
-      }
+    nav a img,
+    nav a {
+      display: inline-block;
+    }
 
-      /* Change the color of links on hover */
-      nav a:hover {
-        color: #18ffff;
-      }
+    #footertext ul {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 0;
+    }
 
-      /* Add a color to the active/current link */
-      nav a.active {
-        color: #18ffff;
-      }
+    #footertext li {
+      display: inline-block;
+      width: 170px;
+      margin-right: 110px;
+      margin-bottom: 16px;
+    }
+    #footertext ul.contacts li {
+      width: 250px;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      color: #333; /* old IE */
+      background-color: #333; /* Modern Browsers */
+      margin-right: 40px;
+      width: 96%;
+    }
 
-      nav a img,
-      nav a {
-        display: inline-block;
-      }
+    .collection {
+      display: grid;
+      grid-auto-columns: max-content;
+      grid-auto-flow: dense;
+      grid-auto-rows: minmax(100px, auto);
+      grid-gap: 25px;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 60px auto;
+      max-width: 800px;
+    }
 
-      #footertext ul {
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        padding: 0;
-      }
+    .product {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
 
-      #footertext li {
-        display: inline-block;
-        width: 170px;
-        margin-right: 110px;
-        margin-bottom: 16px;
-      }
-      #footertext ul.contacts li {
-        width: 250px;
-      }
-      hr {
-        border: none;
-        height: 2px;
-        color: #333; /* old IE */
-        background-color: #333; /* Modern Browsers */
-        margin-right: 40px;
-        width: 96%;
-      }
+    .product__image {
+      background-color: lightblue;
+      display: block;
+      height: 100%;
+      min-height: 200px;
+      width: 100%;
+    }
 
-      .card-signin {
-        border: 0;
-        background-color: #2a2430;
-        text-align: center;
-        width: 60%;
-        margin: 0 auto;
-      }
+    .product__name p {
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+    }
 
-      .card-signin .card-title {
-        color: white;
-        font-weight: 400;
-        font-size: 1.5rem;
-        margin: 1rem auto;
-      }
+    .product__name p a {
+      color: #000000;
+      text-decoration: none;
+    }
 
-      .card-signin .card-body {
-        padding: 1rem;
-      }
+    .product__price p {
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    .h_iframe iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    .h_iframe {
+      height: 100%;
+      width: 100%;
+    }
 
-      .form-signin {
-        width: 100%;
-      }
+    /*PRODUCT ITEM*/
 
-      .form-signin input {
-        width: 60%;
-        margin: 15px;
-      }
-      input::placeholder {
-        text-align: center;
-      }
-      .form-signin .btn {
-        font-size: 80%;
-        border-radius: 5rem;
-        color: white;
-        letter-spacing: 0.1rem;
-        font-weight: bold;
-        margin: 15px auto;
-        padding: 1rem;
-        border: 0;
-        background-color: #ffa087;
-        display: block;
-        width: 200px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div id="topper"><span>CLICK2BUY&apos;S RESPONSE TO COVID19</span></div>
-      <nav>
-        <img style="float: left" src="logo.png" height="90px" width="320px" />
-        <a style="padding-left: 0"><img src="cart2.png" height="24px" width="20px" /></a>
-        <a href="#shop">CART</a>
-        <a href="login.html" class="active">LOGIN</a>
-        <a href="#shop">EXCLUSIVE DEALS</a>
-        <a href="#shop">ELIGIBLE PRINTERS</a>
-        <a href="product.html">SHOP</a>
-        <a href="index.html">HOME</a>
-      </nav>
-      <div id="freeshipping">
-        <p>PRINTERS</p>
-        <br /><br /><br /><br />
-        <img src="peritem.jpg" />
-        <div class="item-name">
-          <h1>HP DeskJet 2722<br />All-in-one Printer</h1>
-          <h2>&#8369;6,990</h2>
+    /*CFX*/
+    .cfx {
+      *zoom:1
+    }
+
+    .cfx:after,.cfx:before {
+      display: table;
+      content: "";
+      line-height: 0
+    }
+
+    .cfx:after {
+      clear: both
+    }
+
+    /*MINI PRODUCT*/
+    .mini-product-grid {
+      display: flex;
+      flex-wrap: wrap
+    }
+
+    .mini-product-grid:after,.mini-product-grid:before {
+      width: 0
+    }
+
+    .mini-product-grid .product-item {
+      flex: 0 1 100%;
+      flex-grow: 1;
+      max-width: 100%;
+      padding: 0 10px;
+      position: relative;
+      order: 10
+    }
+
+    .mini-product-grid .product-item:first-child {
+      order: 1
+    }
+
+    .mini-product-grid .product-item:nth-child(2) {
+      order: 2
+    }
+
+    .mini-product-grid .product-item:nth-child(3) {
+      order: 3
+    }
+
+    .mini-product-grid .product-item:nth-child(4) {
+      order: 4
+    }
+
+    .mini-product-grid .product-item:nth-child(5) {
+      order: 5
+    }
+
+    .mini-product-grid .product-item:nth-child(6) {
+      order: 6
+    }
+
+    .mini-product-grid .product-item:nth-child(7) {
+      order: 7
+    }
+
+    .mini-product-grid .product-item:nth-child(8) {
+      order: 8
+    }
+
+    .mini-product-grid .banner-item {
+      order: 9
+    }
+
+    /*PANEL PRODUCT*/
+
+    .panel {
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 2px solid #ebedee;
+      border-radius: 4px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      transition: all .2s ease-in-out
+    }
+
+    .panel_product {
+      height: 100%;
+      padding: 12px;
+      margin: 0 -11px;
+      background-color: transparent;
+      border: none;
+      border-right: 1px solid #ebedee;
+      border-bottom: 1px solid #ebedee;
+      border-radius: 0;
+      box-shadow: 0 transparent;
+      transition: all .2s ease-in-out
+    }
+
+    .panel_product .info p {
+      margin: 0 0 5px;
+    }
+
+    .panel_product .name {
+      display: block;
+      margin: 0 0 5px;
+      line-height: 1.4;
+      font-family: LatoBold,Arial,Helvetica Neue,Helvetica,sans-serif;
+      font-size: 14px;
+      font-weight: 700
+    }
+
+    .panel_product .photo,.panel_product .user-actions {
+      margin: 0 0 10px
+    }
+
+    .panel_product ._footer .call-to-actions {
+      margin-top: 0;
+    }
+
+
+    /*CALL TO ACTIONS*/
+    .call-to-actions .btn_block:first-child {
+      margin-top: 0;
+    }
+
+    /*BUTTON*/
+
+    .btn {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: Lato,Arial,Helvetica Neue,Helvetica,sans-serif;
+      line-height: 1.42857143;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none
+    }
+
+    .btn,.btn_default {
+      color: #373737;
+      background-color: #ebedee;
+      border-color: #ebedee;
+      font-family: LatoBold,Arial,Helvetica Neue,Helvetica,sans-serif;
+      font-weight: 700;
+      text-shadow: 0 -2px 0 #c0cbd0;
+      border-color: #dde3e6;
+      text-shadow: 0 1px 0 #fff;
+      font-weight: 300
+    }
+
+    .btn_block+.btn_block, .call-to-actions .btn_block {
+      margin-top: 5px;
+    }
+
+    .btn_block {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .btn_sm, .btn_xs {
+      padding: 5px 8px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 4px;
+    }
+
+    .btn_success {
+      color: #fff;
+      background-color: #3ca400;
+      border-color: #3ca400;
+      font-family: LatoBold,Arial,Helvetica Neue,Helvetica,sans-serif;
+      font-weight: 700;
+      text-shadow: 0 -2px 0 #338b00;
+    }
+
+    /*PRICE DEVICE*/
+
+    .price-device .price {
+      font-size: 24px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1;
+      font-family: LatoBold,Arial,Helvetica Neue,Helvetica,sans-serif
+    }
+
+    .price-device .price span {
+      height: 0;
+      line-height: 1;
+      vertical-align: baseline;
+      _vertical-align: bottom;
+      position: relative;
+      bottom: .4em;
+      font-size: .6em
+    }
+
+    .price-device .price-label {
+      font-size: 12px;
+      display: none;
+    }
+
+    .price-device .special-price .configured-price .ea, .price-device .special-price .configured-price .ea span, .price-device .special-price .price, .price-device .special-price .price span, .price-device .special-price .special .price, .price-device .special-price .special .price span {
+    color: #cb1829;
+    }
+
+    /*RATING*/
+
+    .rating-links {
+      line-height: 1em!important;
+    }
+    .rating-links a.bv-review-link {
+      display: inline-block!important;
+    }
+
+    a.bv-review-link {
+      text-decoration: none!important;
+      line-height: 1em!important;
+      margin-bottom: 5px;
+    }
+
+    div.bv-cleanslate .bv-shared {
+      font-size: 1em!important;
+    }
+
+    div.bv-cleanslate .bv-shared {
+      font-size: 1em!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container {
+      zoom: 1!important;
+      position: relative!important;
+      width: auto!important;
+      text-shadow: none!important;
+      margin: 0!important;
+      line-height: 1em!important;
+      display: inline-block!important;
+      margin-right: 10px!important;
+      float: left!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-stars-container:after, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-stars-container:after {
+      clear: both!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-stars-container:after, div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-stars-container:before, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-stars-container:after, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-stars-container:before {
+      content: ""!important;
+      display: table!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container dd.bv-rating-ratio-count, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container dd.bv-rating-ratio-count {
+      font-family: Arial,Helvetica,Tahoma,sans-serif!important;
+      font-size: 14px!important;
+      color: #373737!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container dd, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container dd {
+      display: inline-block!important;
+      vertical-align: middle!important;
+      padding-right: 5px!important;
+      margin-left: 0!important;
+      line-height: 20px!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-label, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-label {
+      padding: 0!important;
+      font-family: Arial,Helvetica,Tahoma,sans-serif!important;
+      font-size: 14px!important;
+      color: #005b9c!important;
+      display: inline-block!important;
+      vertical-align: middle!important;
+      line-height: 20px!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-label span, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-label span {
+      display: inline-block!important;
+      cursor: pointer!important;
+    }
+
+    div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container:after, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container:after {
+      clear: both!important;
+    }
+
+  div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container dd.bv-rating-ratio-count span, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container dd.bv-rating-ratio-count span {
+    cursor: pointer!important;
+  }
+
+  div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-stars-container .bv-rating-stars, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-stars-container .bv-rating-stars {
+    position: relative!important;
+    line-height: 1em!important;
+    height: 1em!important;
+    display: block!important;
+    font-size: 20px!important;
+    font-family: initial!important;
+    letter-spacing: -2px!important;
+    bottom: 0!important;
+    cursor: pointer!important;
+  }
+
+  div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container dd, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container dd {
+    display: inline-block!important;
+    vertical-align: middle!important;
+    padding-right: 5px!important;
+    margin-left: 0!important;
+    line-height: 20px!important;
+  }
+
+  div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-stars-container .bv-rating-stars.bv-rating-stars-off, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-stars-container .bv-rating-stars.bv-rating-stars-off {
+    color: #ebedee!important;
+  }
+
+  div.bv-cleanslate .bv-shared .bv-inline-rating-container .bv-rating-stars-container .bv-rating-stars.bv-rating-stars-on, div.bv-cleanslate .bv-shared .bv-summary-bar .bv-rating-stars-container .bv-rating-stars.bv-rating-stars-on {
+    color: #fecc33!important;
+    margin-top: -1em!important;
+  }
+
+  div.bv-cleanslate .bv-shared .bv-rating-label, div.bv-cleanslate .bv-shared .bv-rating-stars, div.bv-cleanslate .bv-shared .bv-rating-stars-container {
+    text-decoration: none!important;
+    word-wrap: normal!important;
+    vertical-align: middle!important;
+    -webkit-font-smoothing: antialiased!important;
+    overflow: hidden!important;
+    cursor: pointer!important;
+  }
+
+  dl {
+    margin-bottom: 20px;
+  }
+
+  div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container:after, div.bv-cleanslate .bv-shared .bv-inline-rating-container dl.bv-stars-container:before, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container:after, div.bv-cleanslate .bv-shared .bv-summary-bar dl.bv-stars-container:before {
+    content: ""!important;
+    display: table!important;
+  }
+
+
+
+  .form-list, .product-view-sales ul, ul.addto, ul.bonus-items {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-search label, .nd {
+    display: none;
+  }
+
+  /*OFFER*/
+  .badge_offer,.item-offer .overlay {
+    display: inline-block;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    text-shadow: 0 0 1px rgba(0,0,0,.3)
+  }
+
+  .badge, .label {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #fff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+    background-color: #7e96a1;
+  }
+
+  .label_product {
+    color: #fff;
+    font-family: LatoBold,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 0;
+    position: relative;
+  }
+
+  .label_product:before {
+    border-color: #000 #000 transparent transparent;
+    border-width: 3px;
+    bottom: -6px;
+    left: 0;
+  }
+
+  .label_product:after {
+    border-width: 9px;
+    right: -18px;
+    top: 0;
+  }
+
+  .label_product:after, .label_product:before {
+    border-style: solid;
+    content: "";
+    position: absolute;
+  }
+
+
+  .badge_important:after, .label_important:after {
+    border-color: #d91a4c transparent transparent #d91a4c;
+  }
+
+  /*NAV*/
+  .nav_pills, .nav_tabs {
+    *zoom: 1;
+  }
+
+  .nav {
+    margin-left: 0;
+    margin-bottom: 20px;
+    list-style: none;
+  }
+
+  .nav_pills:after, .nav_pills:before, .nav_tabs:after, .nav_tabs:before {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+
+  .nav_pills>li, .nav_tabs>li {
+    float: left;
+  }
+
+  .nav_pills>li>a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+  }
+
+  .nav>li>a {
+    display: block;
+  }
+
+  li {
+    line-height: 20px;
+  }
+  ol, ul {
+    padding: 0;
+    margin: 0 0 10px 25px;
+  }
+
+  a>.p_icon-link-secondary {
+    color: #c0cbd0;
+  }
+
+  a [class*=" icon-"], a [class*=" icon-"]:before, a [class^=icon-], a [class^=icon-]:before {
+    display: inline;
+  }
+
+  [class*=" icon-"].pull-left,[class^=icon-].pull-left {
+    margin-right: .3em
+  }
+
+  .icon-check-empty:before, .icon-unchecked:before {
+    content: "\F096";
+  }
+
+  [class*=" icon-"].pull-right,[class^=icon-].pull-right {
+    margin-left: .3em
+  }
+
+  [class*=" icon-"]:before, [class^=icon-]:before {
+    text-decoration: inherit;
+    display: inline-block;
+    speak: none;
+  }
+
+  [class*=" icon-"],[class^=icon-] {
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+    margin-top: 0
+  }
+
+  /*IMAGE*/
+
+  img {
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic
+  }
+
+  img.lazy {
+    transition: opacity .3s ease-in
+  }
+
+  /*UTILITIES*/
+
+  .badge_important, .label_important {
+    background-color: #d91a4c;
+  }
+
+  #category-grid .review_grid {
+    height: 22px;
+    line-height: 22;
+  }
+
+  .p_txt-upper, .text_uppercase {
+    text-transform: uppercase;
+  }
+
+  a {
+    color: #005b9c;
+    text-decoration: none;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  .p_txt-sm,.small,.txt_small {
+    font-size: 85%;
+    line-height: 1.4
+  }
+
+  .hidden-desktop,.visible-phone,.visible-small-phone,.visible-tablet {
+    display: none!important
+  }
+
+  .l_dsp-blc {
+    display: block!important;
+  }
+
+  .l_mgn-tb-sm {
+    margin-top: 10px
+  }
+
+  .l_mgn-b-sm,.l_mgn-tb-sm {
+    margin-bottom: 10px
+  }
+
+  .price-device {
+    margin: 0 0 7px;
+  }
+
+  /*MEDIA QUERIES*/
+  @media (max-width: 420px) {
+    .mini-product-grid .product-item {
+      flex:0 1 100%;
+      max-width: 100%
+    }
+  }
+
+  @media (min-width: 420px) {
+    .mini-product-grid .product-item {
+      flex:0 1 50%;
+      max-width: 50%
+    }
+
+    .panel_product {
+      display:flex;
+      flex-direction: column;
+      padding: 18px
+    }
+
+    .panel_product .photo-box {
+      display: block;
+      flex-shrink: 0
+    }
+
+    body #category-grid .panel_product {
+      padding-bottom:18px
+    }
+
+    body #category-grid .panel_product ._footer {
+      margin-top:auto;
+      min-height: auto;
+      padding: 0
+    }
+  }
+
+  @media (min-width: 768px) {
+    body:not(.layout-grid-2col) .mini-product-grid .product-item {
+      flex:0 1 25%;
+      max-width: 25%
+    }
+
+    .panel_product .info {
+      margin-bottom:10px
+    }
+  }
+
+  @media (min-width: 992px) {
+    .nav_pills-sm>li>a,.nav_tabs-sm>li>a {
+      padding:4px;
+      margin-right: 2px;
+      line-height: 12px;
+      font-size: 13px
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="topper"><span>CLICK2BUY&apos;S RESPONSE TO COVID19</span></div>
+    <nav>
+      <img style="float: left" src="logo.png" height="90px" width="320px" />
+      <a style="padding-left: 0"><img src="cart2.png" height="24px" width="20px" /></a>
+      <a href="#shop">CART</a>
+      <a href="login.html">LOGIN</a>
+      <a href="#shop">EXCLUSIVE DEALS</a>
+      <a href="#shop">ELIGIBLE PRINTERS</a>
+      <a href="product.html" class="active">SHOP</a>
+      <a href="index.html">HOME</a>
+    </nav>
+    <div id="freeshipping" class="h_iframe">
+      <div id="category-grid" class="hlisting mini-product-grid category section cfx">
+        <div class="product-item" data-position="1">
+            <div class="product-info-item panel panel_product stock-in cfx" data-pid="330048" data-prodtype="simple">
+                <div class="photo-box">
+                    <a href="https://www.harveynorman.com.au/hp-neverstop-mfp-1202nw-mono-laser-printer-white.html">
+                        <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/5/h/5hg93a-hp-neverstop-mfp-1202nw-mono-laser-printer-white.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/5/h/5hg93a-hp-neverstop-mfp-1202nw-mono-laser-printer-white.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/5/h/5hg93a-hp-neverstop-mfp-1202nw-mono-laser-printer-white.jpg" alt="HP Neverstop MFP 1202nw Mono Laser Printer - White" width="400" height="225" style="opacity: 1;" />
+                    </a>
+                </div>
+
+                <!-- / product image -->
+                <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-330048">
+                    <span class="regular-price " data-pid="product-price-330048" id="product-price-330048">
+                        <span class="price"><span>$</span>579</span>
+                    </span>
+                </div>
+
+                <div class="info">
+                    <a href="https://www.harveynorman.com.au/hp-neverstop-mfp-1202nw-mono-laser-printer-white.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP Neverstop MFP 1202nw Mono Laser Printer - White</a>
+
+                    <div class="short-description p_txt-sm visible-small-phone">
+                        <p>Revolutionise the way you print your documents with the help of the HP Neverstop MFP 1202nw Mono Laser Printer. A first of its kind, Neverstop...</p>
+                    </div>
+                    <div class="item-offer"></div>
+                    <div class="description cms sr-only">
+                        <p>Revolutionise the way you print your documents with the help of the HP Neverstop MFP 1202nw Mono Laser Printer. A first of its kind, Neverstop uses cartridge-free laser technology to deliver print speeds at up to 21 ppm, as well as provide scan and copy versatility without the mess.</p>
+                        <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+                    </div>
+                </div>
+
+                <div class="_footer cfx">
+                    <div class="user-actions last">
+                        <div class="call-to-actions">
+                            <a rel="nofollow"
+                            title="Add HP Neverstop MFP 1202nw Mono Laser Printer - White to cart"
+                            class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                            href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/330048/"
+                            data-pid="330048"
+                            data-tracking="add_to_cart">
+                            <span>Add to cart</span>
+                            </a>
+
+                            <a class="btn btn_block btn_sm store-stock"
+                                href="javascript:void(0)"
+                                data-gtm-tracking="fine in store"
+                                data-gtm-product-name="HP Neverstop MFP 1202nw Mono Laser Printer - White"
+                                data-pid="330048"
+                                data-citrus-ad-id=""
+                                data-prodtype="simple"
+                                title="Check Store Stock for HP Neverstop MFP 1202nw Mono Laser Printer - White">
+                                Find in store
+                            </a>
+                        </div>
+                    </div>
+                    <div class="review review_grid">
+                        <div id="BVRRInlineRating-330048" class="rating-links" data-url="https://www.harveynorman.com.au/hp-neverstop-mfp-1202nw-mono-laser-printer-white.html">
+                            <a href="https://www.harveynorman.com.au/hp-neverstop-mfp-1202nw-mono-laser-printer-white.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                                <div class="bv-cleanslate bv-cv2-cleanslate">
+                                    <div data-bv-v="ratingItem:4.1667" class="bv-shared bv-rating-top-statistic">
+                                        <div class="bv-inline-rating-container bv-summary-bar">
+                                            <dl class="bv-stars-container" role="presentation">
+                                                <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="4.2 out of 5 stars">
+                                                    <span class="bv-rating-stars-container">   
+                                                        <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                                        <span class="bv-rating-stars bv-rating-stars-on" style="width:83.33% !important;" aria-hidden="true">  ★★★★★  </span>
+                                                    </span>
+                                                </dd>
+                                                <dd class="bv-rating-ratio-count" role="presentation" title="6 reviews">
+                                                    <span class="bv-rating-label"> (<span class="reviewCount">6</span>) </span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="addto cfx nav nav_pills nav_pills-sm">
+                        <!-- add to compare -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/330048/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP Neverstop MFP 1202nw Mono Laser Printer - White to </span>
+                                Compare
+                            </a>
+                        </li>
+                        <!-- / add to compare -->
+
+                        <!-- add to wishlist -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/330048/" class="icn icn-wishlist">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP Neverstop MFP 1202nw Mono Laser Printer - White to </span> Wishlist
+                            </a>
+                        </li>
+                        <!-- / add to wishlist -->         
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="item-description">
-          <h3>Product details of HP DeskJet 2722 All-in-one Printer</h3>
-          <hr />
-          <p>
-            Get original HP Inks from ICS, an authorized reseller of authentic HP supplies. Crisp high-quality prints
-            you can count on.
-          </p>
-          <img src="2722.jpg" />
-          <p>Original HP cartridges that fit how you live, work, and print. Count on consistent, top quality results</p>
-          <p>Cartridge Colors: Tri-color</p>
-          <p>Print Technology: Ink</p>
-          <p>Page yield colour: ~150 pages</p>
-          <p>Product type: Standard Capacity Ink Cartridges</p>
-          <hr />
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="2">
+            <div class="product-info-item panel panel_product stock-in cfx" data-pid="279168" data-prodtype="simple">
+
+                <!-- product image -->
+                <div class="photo-box">
+                    <a href="https://www.harveynorman.com.au/hp-envy-photo-7822-all-in-one-printer-gold.html">
+                        <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/y/0/y0g42d.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/y/0/y0g42d.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/y/0/y0g42d.jpg" alt="HP Envy Photo 7822 All-in-One Printer - Gold" width="400" height="225"  style="opacity: 1;" />
+                    </a>
+                </div>
+                <!-- / product image -->
+
+                <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-279168">
+                    <span class="regular-price " data-pid="product-price-279168" id="product-price-279168">
+                        <span class="price"><span>$</span>148</span>
+                    </span>
+                </div>
+
+                <div class="info">
+                    <a href="https://www.harveynorman.com.au/hp-envy-photo-7822-all-in-one-printer-gold.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP Envy Photo 7822 All-in-One Printer - Gold</a>
+                    <div class="short-description p_txt-sm visible-small-phone">
+                        <p>Versatile and convenient to use, the HP Envy Photo 7822 All-in-One Printer provides printing, scanning, and faxing functions in a single...</p> 
+                    </div>
+                    <ul class="bonus-items-cashback"></ul>
+                    <div class="item-offer"></div>
+                    <div class="description cms sr-only">
+                        <p>Versatile and convenient to use, the HP Envy Photo 7822 All-in-One Printer provides printing, scanning, and faxing functions in a single location, making it a handy, practical staple for home or office use. It also comes with a coloured 2.65-inch capacitive touchscreen for ease of use.</p>
+                        <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+                    </div>
+                </div>
+                <div class="_footer cfx">
+                    <div class="user-actions last">
+                        <div class="call-to-actions">
+                            <a rel="nofollow" title="Add HP Envy Photo 7822 All-in-One Printer - Gold to cart" class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart" href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/279168/" data-pid="279168" data-tracking="add_to_cart">
+                                <span>Add to cart</span>
+                            </a>
+                            <a class="btn btn_block btn_sm store-stock" href="javascript:void(0)" data-gtm-tracking="fine in store" data-gtm-product-name="HP Envy Photo 7822 All-in-One Printer - Gold" data-pid="279168" data-citrus-ad-id="" data-prodtype="simple" title="Check Store Stock for HP Envy Photo 7822 All-in-One Printer - Gold">Find in store</a>
+                        </div>            
+                    </div>
+                    <div class="review review_grid">
+                        <div id="BVRRInlineRating-279168" class="rating-links" data-url="https://www.harveynorman.com.au/hp-envy-photo-7822-all-in-one-printer-gold.html">
+                            <a href="https://www.harveynorman.com.au/hp-envy-photo-7822-all-in-one-printer-gold.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                                <div class="bv-cleanslate bv-cv2-cleanslate">
+                                    <div data-bv-v="ratingItem:4.7033" class="bv-shared bv-rating-top-statistic">
+                                        <div class="bv-inline-rating-container bv-summary-bar">
+                                            <dl class="bv-stars-container" role="presentation">
+                                                <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="4.7 out of 5 stars">
+                                                    <span class="bv-rating-stars-container">   
+                                                        <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                                        <span class="bv-rating-stars bv-rating-stars-on" style="width:94.07% !important;" aria-hidden="true">  ★★★★★  </span>     
+                                                    </span>
+                                                </dd>
+                                                <dd class="bv-rating-ratio-count" role="presentation" title="91 reviews">
+                                                    <span class="bv-rating-label"> (<span class="reviewCount">91</span>) </span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="addto cfx nav nav_pills nav_pills-sm">
+                        <!-- add to compare -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/279168/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP Envy Photo 7822 All-in-One Printer - Gold to </span>
+                                Compare
+                            </a>
+                        </li>
+                        <!-- / add to compare -->
+
+                        <!-- add to wishlist -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/279168/" class="icn icn-wishlist">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP Envy Photo 7822 All-in-One Printer - Gold to </span> Wishlist
+                            </a>
+                        </li>
+                        <!-- / add to wishlist -->                    
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div id="footerpic"><img src="footer.png" /></div>
-      <div id="footertext">
-        <br />
-        <br />
-        <br />
-        <br />
-        <ul>
-          <li>About click2buy prime</li>
-          <li>Help &amp; settings</li>
-          <li>Contact us</li>
-          <li>Terms &amp; conditions</li>
-          <li style="margin-right: 120px">Delivery schedule</li>
-          <li>Privacy policy</li>
-          <li>Modes of payment</li>
-        </ul>
-        <ul>
-          <li style="width: 100%; text-align: right; margin: 0; padding-right: 40px">All content copyright 2021</li>
-        </ul>
-        <hr />
-        <ul class="contacts">
-          <li>MANILA (+632) 8689-5000</li>
-          <li>Email: info@ics.com.ph</li>
-          <li>CEBU (+632) 260-2071</li>
-          <li>Toll-Free No.: 1-800-10-1427273</li>
-        </ul>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="3">
+            <div class="product-info-item panel panel_product stock-in cfx" data-pid="299458" data-prodtype="simple">
+                <!-- product image -->
+                <div class="photo-box">
+                    <a href="https://www.harveynorman.com.au/hp-smart-tank-plus-655-all-in-one-printer.html">
+                        <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/y/0/y0f74a-hp-smart-tank-plus-655-all-in-one-printer.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/y/0/y0f74a-hp-smart-tank-plus-655-all-in-one-printer.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/y/0/y0f74a-hp-smart-tank-plus-655-all-in-one-printer.jpg" alt="HP Smart Tank Plus 655 All-in-One Printer" width="400" height="225"  style="opacity: 1;" />            
+                    </a>
+                </div>
+
+                <!-- / product image -->
+                <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-299458">
+                    <span class="regular-price " data-pid="product-price-299458" id="product-price-299458">
+                        <span class="price"><span>$</span>599</span>
+                    </span>
+                </div>
+                <div class="info">
+                    <a href="https://www.harveynorman.com.au/hp-smart-tank-plus-655-all-in-one-printer.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP Smart Tank Plus 655 All-in-One Printer</a>
+                    <div class="short-description p_txt-sm visible-small-phone">
+                        <p>A flexible companion for document-related tasks at home or in the office, the HP Smart Tank Plus 655 All-in-One Printer lets you print...</p>            
+                    </div>
+                    <ul class="bonus-items-cashback"></ul>
+                    <div class="item-offer"></div>
+                    <div class="description cms sr-only">
+                        <p>A flexible companion for document-related tasks at home or in the office, the HP Smart Tank Plus 655 All-in-One Printer lets you print, copy, and scan all in one convenient device. Simple to use, it features an intuitive touch panel that gives you everything you need right at your fingertips.</p>
+                        <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+                    </div>
+                </div>
+                <div class="_footer cfx">
+                    <div class="user-actions last">
+                        <div class="call-to-actions">
+                            <a rel="nofollow"
+                                title="Add HP Smart Tank Plus 655 All-in-One Printer to cart"
+                                class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                                href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/299458/"
+                                data-pid="299458"
+                                data-tracking="add_to_cart">
+                                <span>Add to cart</span>
+                            </a>
+                            <a class="btn btn_block btn_sm store-stock"
+                                href="javascript:void(0)"
+                                data-gtm-tracking="fine in store"
+                                data-gtm-product-name="HP Smart Tank Plus 655 All-in-One Printer"
+                                data-pid="299458"
+                                data-citrus-ad-id=""
+                                data-prodtype="simple"
+                                title="Check Store Stock for HP Smart Tank Plus 655 All-in-One Printer">
+                                Find in store
+                            </a>
+                        </div>
+                    </div>
+                    <div class="review review_grid">
+                        <div id="BVRRInlineRating-299458" class="rating-links" data-url="https://www.harveynorman.com.au/hp-smart-tank-plus-655-all-in-one-printer.html">
+                            <a href="https://www.harveynorman.com.au/hp-smart-tank-plus-655-all-in-one-printer.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                                <div class="bv-cleanslate bv-cv2-cleanslate">
+                                    <div data-bv-v="ratingItem:2.25" class="bv-shared bv-rating-top-statistic">
+                                        <div class="bv-inline-rating-container bv-summary-bar">
+                                            <dl class="bv-stars-container" role="presentation">
+                                                <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="2.3 out of 5 stars">
+                                                    <span class="bv-rating-stars-container">   
+                                                        <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                                        <span class="bv-rating-stars bv-rating-stars-on" style="width:45% !important;" aria-hidden="true">  ★★★★★  </span>     
+                                                    </span>
+                                                </dd>
+                                                <dd class="bv-rating-ratio-count" role="presentation" title="12 reviews">
+                                                    <span class="bv-rating-label"> (<span class="reviewCount">12</span>) </span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="addto cfx nav nav_pills nav_pills-sm">
+                        <!-- add to compare -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/299458/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP Smart Tank Plus 655 All-in-One Printer to </span>
+                                Compare
+                            </a>
+                        </li>
+                        <!-- / add to compare -->
+
+                        <!-- add to wishlist -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/299458/" class="icn icn-wishlist">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP Smart Tank Plus 655 All-in-One Printer to </span> Wishlist
+                            </a>
+                        </li>
+                        <!-- / add to wishlist -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="4">
+            <div class="product-info-item panel panel_product stock-in cfx" data-pid="254897" data-prodtype="simple">
+                <!-- product image -->
+                <div class="photo-box">
+                    <a href="https://www.harveynorman.com.au/hp-officejet-250-mobile-all-in-one-printer.html">
+                        <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/1/5/1520.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/1/5/1520.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/1/5/1520.jpg" alt="HP OfficeJet 250 Mobile All-In-One Printer" width="400" height="225"  style="opacity: 1;" />           
+                    </a>
+                </div>
+                <!-- / product image -->
+                <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-254897">
+                    <span class="regular-price " data-pid="product-price-254897" id="product-price-254897">
+                        <span class="price"><span>$</span>427</span>
+                    </span>
+                </div>
+                <div class="info">
+                    <a href="https://www.harveynorman.com.au/hp-officejet-250-mobile-all-in-one-printer.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP OfficeJet 250 Mobile All-In-One Printer</a>
+                    <div class="short-description p_txt-sm visible-small-phone">
+                        <p>Clever, compact and durable, the HP OfficeJet 250 Mobile All-In-One Printer lets you print, scan and copy from almost anywhere, with easy...</p>            
+                    </div>
+                    <ul class="bonus-items-cashback"></ul>
+                    <div class="item-offer"></div>
+                    <div class="description cms sr-only">
+                        <p>Clever, compact and durable, the HP OfficeJet 250 Mobile All-In-One Printer lets you print, scan and copy from almost anywhere, with easy Bluetooth and WiFi connectivity and long battery life making it ideal for working on the go.</p>                                                            
+                        <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+                    </div>
+                </div>
+                <div class="_footer cfx">
+                    <div class="user-actions last">
+                        <div class="call-to-actions">                        
+                            <a rel="nofollow"
+                                title="Add HP OfficeJet 250 Mobile All-In-One Printer to cart"
+                                class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                                href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/254897/"
+                                data-pid="254897"
+                                data-tracking="add_to_cart">
+                                <span>Add to cart</span>
+                            </a>
+                            <a class="btn btn_block btn_sm store-stock"
+                                href="javascript:void(0)"
+                                data-gtm-tracking="fine in store"
+                                data-gtm-product-name="HP OfficeJet 250 Mobile All-In-One Printer"
+                                data-pid="254897"
+                                data-citrus-ad-id=""
+                                data-prodtype="simple"
+                                title="Check Store Stock for HP OfficeJet 250 Mobile All-In-One Printer">
+                                Find in store
+                            </a>
+                        </div>
+                    </div>
+                    <div class="review review_grid">
+                        <div id="BVRRInlineRating-254897" class="rating-links" data-url="https://www.harveynorman.com.au/hp-officejet-250-mobile-all-in-one-printer.html">
+                            <a href="https://www.harveynorman.com.au/hp-officejet-250-mobile-all-in-one-printer.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                                <div class="bv-cleanslate bv-cv2-cleanslate">
+                                    <div data-bv-v="ratingItem:4.1636" class="bv-shared bv-rating-top-statistic">
+                                        <div class="bv-inline-rating-container bv-summary-bar">
+                                            <dl class="bv-stars-container" role="presentation">
+                                                <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="4.2 out of 5 stars">
+                                                    <span class="bv-rating-stars-container">   
+                                                        <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                                        <span class="bv-rating-stars bv-rating-stars-on" style="width:83.27% !important;" aria-hidden="true">  ★★★★★  </span> 
+                                                    </span>
+                                                </dd>
+                                                <dd class="bv-rating-ratio-count" role="presentation" title="55 reviews">
+                                                    <span class="bv-rating-label"> (<span class="reviewCount">55</span>) </span>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="addto cfx nav nav_pills nav_pills-sm">
+                        <!-- add to compare -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/254897/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP OfficeJet 250 Mobile All-In-One Printer to </span>
+                                Compare
+                            </a>
+                        </li>
+                        <!-- / add to compare -->
+
+                        <!-- add to wishlist -->
+                        <li>
+                            <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/254897/" class="icn icn-wishlist">
+                                <i class="icon-check-empty p_icon-link-secondary"></i>
+                                <span class="nd">Add HP OfficeJet 250 Mobile All-In-One Printer to </span> Wishlist
+                            </a>
+                        </li>
+                        <!-- / add to wishlist -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="5">
+          <div class="product-info-item panel panel_product stock-in cfx" data-pid="273491" data-prodtype="simple">
+            <!-- product image -->
+            <div class="photo-box">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-2621-multifunction-printer.html">
+                <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/y/5/y5h68a.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/y/5/y5h68a.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/y/5/y5h68a.jpg" alt="HP DeskJet 2621 Multifunction Printer" width="400" height="225" />
+              </a>
+            </div>
+            <!-- / product image -->
+
+            <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-273491">
+              <div class="special-price ">
+                <span class="special">
+                  <span class="price-label">Special Price:</span>
+                  <span class="price" data-pid="product-price-273491" id="product-price-273491"><span>$</span>38</span>
+                </span>
+              </div>
+            </div>
+            <div class="info">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-2621-multifunction-printer.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP DeskJet 2621 Multifunction Printer</a>
+              <div class="short-description p_txt-sm visible-small-phone">
+                <p>Suitable for home and office use, HP DeskJet 2621 Multifunction Printer lets you print, copy, and scan all in one convenient device. Easy...</p>
+              </div>
+              <ul class="bonus-items-cashback"></ul>
+              <div class="item-offer"></div>
+              <div class="description cms sr-only">
+                <p>Suitable for home and office use, HP DeskJet 2621 Multifunction Printer lets you print, copy, and scan all in one convenient device. Easy to use, it can be paired with the HP Printer Remote companion app* for managing printing tasks and scanning on the go.</p>
+                <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+              </div>
+            </div>
+            <div class="_footer cfx">
+              <div class="user-actions last">
+                <div class="call-to-actions">
+                  <a rel="nofollow"
+                    title="Add HP DeskJet 2621 Multifunction Printer to cart"
+                    class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                    href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/273491/"
+                    data-pid="273491"
+                    data-tracking="add_to_cart">
+                    <span>Add to cart</span>
+                  </a>
+                  <a class="btn btn_block btn_sm store-stock"
+                    href="javascript:void(0)"
+                    data-gtm-tracking="fine in store"
+                    data-gtm-product-name="HP DeskJet 2621 Multifunction Printer"
+                    data-pid="273491"
+                    data-citrus-ad-id=""
+                    data-prodtype="simple"
+                    title="Check Store Stock for HP DeskJet 2621 Multifunction Printer">
+                    Find in store
+                  </a>
+                </div>
+              </div>
+              <div class="review review_grid">
+                <div id="BVRRInlineRating-273491" class="rating-links" data-url="https://www.harveynorman.com.au/hp-deskjet-2621-multifunction-printer.html">
+                  <a href="https://www.harveynorman.com.au/hp-deskjet-2621-multifunction-printer.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                    <div class="bv-cleanslate bv-cv2-cleanslate">
+                      <div data-bv-v="ratingItem:4.4286" class="bv-shared bv-rating-top-statistic">
+                        <div class="bv-inline-rating-container bv-summary-bar">
+                          <dl class="bv-stars-container" role="presentation">
+                            <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="4.4 out of 5 stars">
+                              <span class="bv-rating-stars-container">   
+                                <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                <span class="bv-rating-stars bv-rating-stars-on" style="width:88.57% !important;" aria-hidden="true">  ★★★★★  </span>
+                              </span>
+                            </dd>
+                            <dd class="bv-rating-ratio-count" role="presentation" title="210 reviews">
+                              <span class="bv-rating-label"> (<span class="reviewCount">210</span>) </span>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <ul class="addto cfx nav nav_pills nav_pills-sm">
+                <!-- add to compare -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/273491/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet 2621 Multifunction Printer to </span>Compare
+                  </a>
+                </li>
+                <!-- / add to compare -->
+
+                <!-- add to wishlist -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/273491/" class="icn icn-wishlist">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet 2621 Multifunction Printer to </span> Wishlist
+                  </a>
+                </li>
+                <!-- / add to wishlist -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="6">
+          <div class="product-info-item panel panel_product stock-in cfx" data-pid="299457" data-prodtype="simple">
+            <!-- product image -->
+            <div class="photo-box">
+              <a href="https://www.harveynorman.com.au/hp-smart-tank-plus-555-all-in-one-printer-basalt.html">
+                <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/1/t/1tj12a-hp-smart-tank-plus-555-all-in-one-printer.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/1/t/1tj12a-hp-smart-tank-plus-555-all-in-one-printer.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/1/t/1tj12a-hp-smart-tank-plus-555-all-in-one-printer.jpg" alt="HP Smart Tank Plus 555 All-in-One Printer - Basalt" width="400" height="225" />
+              </a>
+            </div>
+            <!-- / product image -->
+
+            <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-299457">
+              <div class="special-price ">
+                <span class="special">
+                  <span class="price-label">Special Price:</span>
+                  <span class="price" data-pid="product-price-299457" id="product-price-299457"><span>$</span>498</span>
+                </span>
+              </div>
+            </div>
+            <div class="info">
+              <a href="https://www.harveynorman.com.au/hp-smart-tank-plus-555-all-in-one-printer-basalt.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP Smart Tank Plus 555 All-in-One Printer - Basalt</a>
+              <div class="short-description p_txt-sm visible-small-phone">
+                <p>Catering to your various productivity needs, the HP Smart Tank Plus 555 All-in-One Printer lets you print, scan, and copy documents from...</p>            
+              </div>
+              <ul class="bonus-items-cashback"></ul>
+              <div class="item-offer"></div>
+              <div class="description cms sr-only">
+                <p>Catering to your various productivity needs, the HP Smart Tank Plus 555 All-in-One Printer lets you print, scan, and copy documents from one user-friendly device.</p>                                                            <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+              </div>
+            </div>
+            <div class="_footer cfx">
+              <div class="user-actions last">
+                <div class="call-to-actions">                        
+                  <a  rel="nofollow"
+                    title="Add HP Smart Tank Plus 555 All-in-One Printer - Basalt to cart"
+                    class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                    href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/299457/"
+                    data-pid="299457"
+                    data-tracking="add_to_cart"><span>Add to cart</span>
+                  </a>
+                  <a class="btn btn_block btn_sm store-stock"
+                    href="javascript:void(0)"
+                    data-gtm-tracking="fine in store"
+                    data-gtm-product-name="HP Smart Tank Plus 555 All-in-One Printer - Basalt"
+                    data-pid="299457"
+                    data-citrus-ad-id=""
+                    data-prodtype="simple"
+                    title="Check Store Stock for HP Smart Tank Plus 555 All-in-One Printer - Basalt">Find in store
+                  </a>
+                </div>            
+              </div>
+              <div class="review review_grid">
+                <div id="BVRRInlineRating-299457" class="rating-links" data-url="https://www.harveynorman.com.au/hp-smart-tank-plus-555-all-in-one-printer-basalt.html">
+                  <a href="https://www.harveynorman.com.au/hp-smart-tank-plus-555-all-in-one-printer-basalt.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                    <div class="bv-cleanslate bv-cv2-cleanslate">
+                      <div data-bv-v="ratingItem:4.2969" class="bv-shared bv-rating-top-statistic">
+                        <div class="bv-inline-rating-container bv-summary-bar">
+                          <dl class="bv-stars-container" role="presentation">
+                            <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="4.3 out of 5 stars">
+                              <span class="bv-rating-stars-container">   
+                                <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                <span class="bv-rating-stars bv-rating-stars-on" style="width:85.94% !important;" aria-hidden="true">  ★★★★★  </span>     
+                              </span>
+                            </dd>
+                            <dd class="bv-rating-ratio-count" role="presentation" title="64 reviews">
+                              <span class="bv-rating-label"> (<span class="reviewCount">64</span>) </span>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <ul class="addto cfx nav nav_pills nav_pills-sm">
+                <!-- add to compare -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/299457/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP Smart Tank Plus 555 All-in-One Printer - Basalt to </span>Compare
+                  </a>
+                </li>
+                <!-- / add to compare -->
+
+                <!-- add to wishlist -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/299457/" class="icn icn-wishlist">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP Smart Tank Plus 555 All-in-One Printer - Basalt to </span> Wishlist
+                  </a>
+                </li>
+                <!-- / add to wishlist -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="7">
+          <div class="product-info-item panel panel_product stock-in cfx" data-pid="348097" data-prodtype="simple">
+
+            <!-- product image -->
+            <div class="photo-box">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-2721-all-in-one-printer-cement.html">
+                <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/7/f/7fr58a-hp-deskjet-2700-all-in-one-printer-cement-0.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/7/f/7fr58a-hp-deskjet-2700-all-in-one-printer-cement-0.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/7/f/7fr58a-hp-deskjet-2700-all-in-one-printer-cement-0.jpg" alt="HP DeskJet 2721 All-in-One Printer - Cement" width="400" height="225" />            
+              </a>
+            </div>
+            <!-- / product image -->
+
+            <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-348097">
+              <span class="regular-price " data-pid="product-price-348097" id="product-price-348097">
+                <span class="price"><span>$</span>49</span>
+              </span>
+            </div>
+            <div class="info">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-2721-all-in-one-printer-cement.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP DeskJet 2721 All-in-One Printer - Cement</a>
+              <div class="short-description p_txt-sm visible-small-phone">
+                <p>The HP DeskJet 2721 All-in-One Printer lets you print, scan, and copy everyday documents with ease and efficiency, helping you increase...</p>
+              </div>
+              <div class="item-offer"></div>
+              <div class="description cms sr-only">
+                <p>The HP DeskJet 2721 All-in-One Printer lets you print, scan, and copy everyday documents with ease and efficiency, helping you increase your productivity in various areas of your life.</p>                                                            <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+              </div>
+            </div>
+            <div class="_footer cfx">
+              <div class="user-actions last">
+                <div class="call-to-actions">
+                  <a rel="nofollow"
+                    title="Add HP DeskJet 2721 All-in-One Printer - Cement to cart"
+                    class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                    href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/348097/"
+                    data-pid="348097"
+                    data-tracking="add_to_cart"><span>Add to cart</span>
+                  </a>
+
+                  <a class="btn btn_block btn_sm store-stock"
+                    href="javascript:void(0)"
+                    data-gtm-tracking="fine in store"
+                    data-gtm-product-name="HP DeskJet 2721 All-in-One Printer - Cement"
+                    data-pid="348097"
+                    data-citrus-ad-id=""
+                    data-prodtype="simple"
+                    title="Check Store Stock for HP DeskJet 2721 All-in-One Printer - Cement">Find in store
+                  </a>
+                </div>
+              </div>
+              <div class="review review_grid">
+                <div id="BVRRInlineRating-348097" class="rating-links" data-url="https://www.harveynorman.com.au/hp-deskjet-2721-all-in-one-printer-cement.html">
+                  <a href="https://www.harveynorman.com.au/hp-deskjet-2721-all-in-one-printer-cement.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                    <div class="bv-cleanslate bv-cv2-cleanslate">
+                      <div data-bv-v="ratingItem:0" class="bv-shared bv-rating-top-statistic">
+                        <div class="bv-inline-rating-container bv-summary-bar">
+                          <dl class="bv-stars-container" role="presentation">
+                            <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="no ratings">
+                              <span class="bv-rating-stars-container">
+                                <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>
+                                <span class="bv-rating-stars bv-rating-stars-on" style="width:0% !important;" aria-hidden="true">  ★★★★★  </span>
+                              </span>
+                            </dd>
+                            <dd class="bv-rating-ratio-count" role="presentation" title="no reviews">
+                              <span class="bv-rating-label"> (<span class="reviewCount">0</span>) </span>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <ul class="addto cfx nav nav_pills nav_pills-sm">
+                <!-- add to compare -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/348097/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                    <i class="icon-check-empty p_icon-link-secondary"></i><span class="nd">Add HP DeskJet 2721 All-in-One Printer - Cement to </span> Compare
+                  </a>
+                </li>
+                <!-- / add to compare -->
+
+                <!-- add to wishlist -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/348097/" class="icn icn-wishlist">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet 2721 All-in-One Printer - Cement to </span> Wishlist
+                  </a>
+                </li>
+                <!-- / add to wishlist -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="8">
+          <div class="product-info-item panel panel_product stock-in cfx" data-pid="348098" data-prodtype="simple">
+
+            <!-- product image -->
+            <div class="photo-box">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-plus-4121-all-in-one-printer-cement.html">
+                <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/7/f/7fs87a-hp-deskjet-plus-4121-all-in-one-printer.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/7/f/7fs87a-hp-deskjet-plus-4121-all-in-one-printer.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/7/f/7fs87a-hp-deskjet-plus-4121-all-in-one-printer.jpg" alt="HP DeskJet Plus 4121 All-in-One Printer - Cement" width="400" height="225" />            
+              </a>
+            </div>
+            <!-- / product image -->
+
+            <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-348098">
+              <div class="special-price ">
+                <span class="special">
+                  <span class="price-label">Special Price:</span>
+                  <span class="price" data-pid="product-price-348098" id="product-price-348098"><span>$</span>68</span>
+                </span>
+              </div>
+            </div>
+            <div class="info">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-plus-4121-all-in-one-printer-cement.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP DeskJet Plus 4121 All-in-One Printer - Cement</a>
+              <div class="short-description p_txt-sm visible-small-phone">
+                <p>Print, copy, scan, and fax documents all in one user-friendly device with the HP DeskJet Plus 4121 All-in-One Printer.</p>            
+              </div>
+              <div class="item-offer">
+                <div class="item-offer">
+                  <div class="awesome-deal label label_important label_product p_txt-upper  overlay">Awesome Deal</div>
+                </div>
+              </div>
+              <div class="description cms sr-only">
+                <p>Print, copy, scan, and fax documents all in one user-friendly device with the HP DeskJet Plus 4121 All-in-One Printer.</p>
+                <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+              </div>
+            </div>
+            <div class="_footer cfx">
+              <div class="user-actions last">
+                <div class="call-to-actions">
+                  <a rel="nofollow"
+                    title="Add HP DeskJet Plus 4121 All-in-One Printer - Cement to cart"
+                    class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                    href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/348098/"
+                    data-pid="348098"
+                    data-tracking="add_to_cart"><span>Add to cart</span>
+                  </a>
+
+                  <a class="btn btn_block btn_sm store-stock"
+                    href="javascript:void(0)"
+                    data-gtm-tracking="fine in store"
+                    data-gtm-product-name="HP DeskJet Plus 4121 All-in-One Printer - Cement"
+                    data-pid="348098"
+                    data-citrus-ad-id=""
+                    data-prodtype="simple"
+                    title="Check Store Stock for HP DeskJet Plus 4121 All-in-One Printer - Cement">Find in store
+                  </a>
+                </div>
+              </div>
+              <div class="review review_grid">
+                <div id="BVRRInlineRating-348098" class="rating-links" data-url="https://www.harveynorman.com.au/hp-deskjet-plus-4121-all-in-one-printer-cement.html">
+                  <a href="https://www.harveynorman.com.au/hp-deskjet-plus-4121-all-in-one-printer-cement.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                    <div class="bv-cleanslate bv-cv2-cleanslate">
+                      <div data-bv-v="ratingItem:0" class="bv-shared bv-rating-top-statistic">
+                        <div class="bv-inline-rating-container bv-summary-bar">
+                          <dl class="bv-stars-container" role="presentation">
+                            <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="no ratings">
+                              <span class="bv-rating-stars-container">
+                                <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>
+                                <span class="bv-rating-stars bv-rating-stars-on" style="width:0% !important;" aria-hidden="true">  ★★★★★  </span>
+                              </span>
+                            </dd>
+                            <dd class="bv-rating-ratio-count" role="presentation" title="no reviews">
+                              <span class="bv-rating-label"> (<span class="reviewCount">0</span>) </span>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <ul class="addto cfx nav nav_pills nav_pills-sm">
+
+                <!-- add to compare -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/348098/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare"><i
+                    class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet Plus 4121 All-in-One Printer - Cement to </span>
+                  Compare</a>
+                </li>
+                <!-- / add to compare -->
+
+                <!-- add to wishlist -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/348098/" class="icn icn-wishlist">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet Plus 4121 All-in-One Printer - Cement to </span> Wishlist
+                  </a>
+                </li>
+                <!-- / add to wishlist -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+        <!-- BANNER ITEM -->
+        <div class="col-sm-12 col-xs-12 banner-item">
+          <!-- -->
+          <div id="hnau-promo1" class="advert advert_promo advert_gam360" style="display:none">
+            <script type='text/javascript'>
+              googletag.cmd.push(function () {
+                window.dfp_display_hnau_promo1 = googletag.display('hnau-promo1');
+              });
+            </script>
+          </div>
+
+        </div>
+        <!-- end BANNER ITEM -->
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="9">
+          <div class="product-info-item panel panel_product stock-in cfx" data-pid="338747" data-prodtype="simple">
+
+            <!-- product image -->
+            <div class="photo-box">
+              <a href="https://www.harveynorman.com.au/hp-envy-6030-all-in-one-printer-cement.html">
+                <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/6/w/6wd36a-hp-envy-6030-all-in-one-printer.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/6/w/6wd36a-hp-envy-6030-all-in-one-printer.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/6/w/6wd36a-hp-envy-6030-all-in-one-printer.jpg" alt="HP Envy 6030 All-in-One Printer - Cement" width="400" height="225" />            
+              </a>
+            </div>
+            <!-- / product image -->
+
+            <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-338747">
+              <div class="special-price ">
+                <span class="special">
+                  <span class="price-label">Special Price:</span>
+                  <span class="price" data-pid="product-price-338747" id="product-price-338747"><span>$</span>98</span>
+                </span>
+              </div>
+            </div>
+            <div class="info">
+              <a href="https://www.harveynorman.com.au/hp-envy-6030-all-in-one-printer-cement.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP Envy 6030 All-in-One Printer - Cement</a>
+              <div class="short-description p_txt-sm visible-small-phone">
+                <p>Versatile and convenient to use, the HP Envy 6030 All-in-One Printer provides printing and scanning functions in a centralised unit.</p>
+              </div>
+              <div class="item-offer"></div>
+              <div class="description cms sr-only">
+                <p>Versatile and convenient to use, the HP Envy 6030 All-in-One Printer provides printing and scanning functions in a centralised unit.</p>
+                <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+              </div>
+            </div>
+            <div class="_footer cfx">
+              <div class="user-actions last">
+                <div class="call-to-actions">
+                  <a rel="nofollow"
+                    title="Add HP Envy 6030 All-in-One Printer - Cement to cart"
+                    class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                    href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/338747/"
+                    data-pid="338747"
+                    data-tracking="add_to_cart"><span>Add to cart</span>
+                  </a>
+
+                  <a class="btn btn_block btn_sm store-stock"
+                    href="javascript:void(0)"
+                    data-gtm-tracking="fine in store"
+                    data-gtm-product-name="HP Envy 6030 All-in-One Printer - Cement"
+                    data-pid="338747"
+                    data-citrus-ad-id=""
+                    data-prodtype="simple"
+                    title="Check Store Stock for HP Envy 6030 All-in-One Printer - Cement">Find in store
+                  </a>
+                </div>
+              </div>
+              <div class="review review_grid">
+                <div id="BVRRInlineRating-338747" class="rating-links" data-url="https://www.harveynorman.com.au/hp-envy-6030-all-in-one-printer-cement.html">
+                  <a href="https://www.harveynorman.com.au/hp-envy-6030-all-in-one-printer-cement.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                    <div class="bv-cleanslate bv-cv2-cleanslate">
+                      <div data-bv-v="ratingItem:0" class="bv-shared bv-rating-top-statistic">
+                        <div class="bv-inline-rating-container bv-summary-bar">
+                          <dl class="bv-stars-container" role="presentation">
+                            <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="no ratings">
+                              <span class="bv-rating-stars-container">
+                                <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                <span class="bv-rating-stars bv-rating-stars-on" style="width:0% !important;" aria-hidden="true">  ★★★★★  </span>
+                              </span>
+                            </dd>
+                            <dd class="bv-rating-ratio-count" role="presentation" title="no reviews">
+                              <span class="bv-rating-label"> (<span class="reviewCount">0</span>) </span>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <ul class="addto cfx nav nav_pills nav_pills-sm">
+                <!-- add to compare -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/338747/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP Envy 6030 All-in-One Printer - Cement to </span>Compare
+                  </a>
+                </li>
+                <!-- / add to compare -->
+
+                <!-- add to wishlist -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/338747/" class="icn icn-wishlist">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP Envy 6030 All-in-One Printer - Cement to </span> Wishlist
+                  </a>
+                </li>
+                <!-- / add to wishlist -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
+
+        <!-- PRODUCT ITEM -->
+        <div class="product-item" data-position="10">
+          <div class="product-info-item panel panel_product stock-in cfx" data-pid="259730" data-prodtype="simple">
+
+            <!-- product image -->
+            <div class="photo-box">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-3720-all-in-one-printer-electric-blue.html">
+                <img class="photo photo-category lazy" src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/thumbnail/56x32/9df78eab33525d08d6e5fb8d27136e95/j/9/j9v86a_1.jpg" data-src="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/205x115/9df78eab33525d08d6e5fb8d27136e95/j/9/j9v86a_1.jpg" data-src-retina="https://azcd.harveynorman.com.au/media/catalog/product/cache/21/small_image/400x225/9df78eab33525d08d6e5fb8d27136e95/j/9/j9v86a_1.jpg" alt="HP DeskJet 3720 All-In-One Printer - Electric Blue" width="400" height="225" />            
+              </a>
+            </div>
+            <!-- / product image -->
+            <div class="price-device clearfix l_mgn-tb-sm" data-pid="price-device-259730">
+              <span class="regular-price " data-pid="product-price-259730" id="product-price-259730">
+                <span class="price"><span>$</span>58</span>
+              </span>
+            </div>
+            <div class="info">
+              <a href="https://www.harveynorman.com.au/hp-deskjet-3720-all-in-one-printer-electric-blue.html" class="name fn l_mgn-tb-sm l_dsp-blc">HP DeskJet 3720 All-In-One Printer - Electric Blue</a>
+              <div class="short-description p_txt-sm visible-small-phone">
+                <p>Print out high-quality documents and images with the HP DeskJet 3720 All-In-One Printer. This all-in-one printer can also copy and scan...
+                </p>            
+              </div>
+              <ul class="bonus-items-cashback"></ul>
+              <div class="item-offer"></div>
+              <div class="description cms sr-only">
+                <p>Print out high-quality documents and images with the HP DeskJet 3720 All-In-One Printer. This all-in-one printer can also copy and scan pages, giving you the functions of multiple functions in one convenient platform. </p>
+                <span class="availability-msg">Free store pick up or Australia wide delivery</span>
+              </div>
+            </div>
+            <div class="_footer cfx">
+              <div class="user-actions last">
+                <div class="call-to-actions">                        
+                  <a rel="nofollow"
+                    title="Add HP DeskJet 3720 All-In-One Printer - Electric Blue to cart"
+                    class="primary-call-to-action btn btn-cart btn_block btn_sm btn_success btn-cart"
+                    href="https://www.harveynorman.com.au/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/product/259730/"
+                    data-pid="259730"
+                    data-tracking="add_to_cart"><span>Add to cart</span>
+                  </a>
+
+                  <a class="btn btn_block btn_sm store-stock"
+                    href="javascript:void(0)"
+                    data-gtm-tracking="fine in store"
+                    data-gtm-product-name="HP DeskJet 3720 All-In-One Printer - Electric Blue"
+                    data-pid="259730"
+                    data-citrus-ad-id=""
+                    data-prodtype="simple"
+                    title="Check Store Stock for HP DeskJet 3720 All-In-One Printer - Electric Blue">Find in store
+                  </a>
+                </div>
+              </div>
+
+              <div class="review review_grid">
+                <div id="BVRRInlineRating-259730" class="rating-links" data-url="https://www.harveynorman.com.au/hp-deskjet-3720-all-in-one-printer-electric-blue.html">
+                  <a href="https://www.harveynorman.com.au/hp-deskjet-3720-all-in-one-printer-electric-blue.html#product-reviews" class="bv-review-link" data-gtm-tracking="bv star rating">
+                    <div class="bv-cleanslate bv-cv2-cleanslate">
+                      <div data-bv-v="ratingItem:4.4497" class="bv-shared bv-rating-top-statistic">
+                        <div class="bv-inline-rating-container bv-summary-bar">
+                          <dl class="bv-stars-container" role="presentation">
+                            <dd class="bv-rating-ratio bv-primarySummary-rating-container" role="presentation" title="4.4 out of 5 stars">
+                              <span class="bv-rating-stars-container">   
+                                <span class="bv-rating-stars bv-rating-stars-off" aria-hidden="true">  ★★★★★  </span>  
+                                <span class="bv-rating-stars bv-rating-stars-on"
+                                style="width:88.99% !important;" aria-hidden="true">  ★★★★★  </span>     
+                              </span>
+                            </dd>
+                            <dd class="bv-rating-ratio-count" role="presentation" title="169 reviews">
+                              <span class="bv-rating-label"> (<span class="reviewCount">169</span>) </span>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <ul class="addto cfx nav nav_pills nav_pills-sm">
+                <!-- add to compare -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/catalog/product_compare/add/product/259730/uenc/aHR0cHM6Ly93d3cuaGFydmV5bm9ybWFuLmNvbS5hdS9jYW1lcmFzLXByaW50ZXJzLXBob3RvY2VudHJlL3ByaW50aW5nLWluay1wYXBlci9wcmludGVycy1zY2FubmVycy9ocC85OTM,/" class="icn icn-compare">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet 3720 All-In-One Printer - Electric Blue to </span> Compare
+                  </a>
+                </li>
+                <!-- / add to compare -->
+
+                <!-- add to wishlist -->
+                <li>
+                  <a rel="nofollow" href="https://www.harveynorman.com.au/wishlist/index/add/product/259730/" class="icn icn-wishlist">
+                    <i class="icon-check-empty p_icon-link-secondary"></i>
+                    <span class="nd">Add HP DeskJet 3720 All-In-One Printer - Electric Blue to </span> Wishlist
+                  </a>
+                </li>
+                <!-- / add to wishlist -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end PRODUCT ITEM -->
+
       </div>
     </div>
-  </body>
+    <div id="footerpic"><img src="footer.png" /></div>
+    <div id="footertext">
+      <br />
+      <br />
+      <br />
+      <br />
+      <ul>
+        <li>About click2buy prime</li>
+        <li>Help &amp; settings</li>
+        <li>Contact us</li>
+        <li>Terms &amp; conditions</li>
+        <li style="margin-right: 120px">Delivery schedule</li>
+        <li>Privacy policy</li>
+        <li>Modes of payment</li>
+      </ul>
+      <ul>
+        <li style="width: 100%; text-align: right; margin: 0; padding-right: 40px">All content copyright 2021</li>
+      </ul>
+      <hr />
+      <ul class="contacts">
+        <li>MANILA (+632) 8689-5000</li>
+        <li>Email: info@ics.com.ph</li>
+        <li>CEBU (+632) 260-2071</li>
+        <li>Toll-Free No.: 1-800-10-1427273</li>
+      </ul>
+    </div>
+  </div>
+  <!-- foot_js_bundle -->
+<script type="text/javascript" src="https://azcd.harveynorman.com.au/minify/index/index/g/aea62a5fcc70acba669d0709e8e0aee9025fcb90-appbundlejs-r196.5.0-9f93bff/ts/1590536447/"></script><script> var hnjs = hnjs || []; hnjs.push(['https://azcd.harveynorman.com.au/minify/index/index/g/ccbdf1e7d25bdc8d6b6abfc7eb64ee42d7471a39-0-r196.5.0-9f93bff/ts/1590536447/']); </script><script> var hnjs = hnjs || []; hnjs.push(['https://azcd.harveynorman.com.au/minify/index/index/g/de2f3c0646abd6b2a212eda03abaea6dc48f52a2-slijs-r196.5.0-9f93bff/ts/1590536447/']); </script>        <!-- /foot_js_bundle -->
+</body>
 </html>
