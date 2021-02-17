@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100;200;300	&display=swap" rel="stylesheet">
+		<style>
+			* {
+				margin: 0;
+			}
+
+			body {
+				background-image: url("construction.svg");
+				background-repeat: no-repeat;
+				background-position: right;
+				background-size: 40rem 60rem;
+			}
+
+			.error {
+				display: flex;
+				flex-direction: row;
+				height: 100vh;
+				padding: 0 70px;
+				align-items: center;
+			}
+
+			.error__title {
+				flex: 50%;
+				color: #000;
+				padding: 100px 0;
+				z-index: 1;
+			}
+
+			.error__title-heading {
+				/*font-family: 'Montserrat Alternates', sans-serif;*/
+				font-family: "IBM Plex Serif",Big Caslon,serif;
+				font-size: 100px;
+				line-height: 1;
+				font-weight: 200;
+			}
+
+			.error__title-sub {
+				font-size: 2.5rem;
+				font-family: "IBM Plex Serif",Big Caslon,serif;
+				color: #8d8f9a;
+				line-height: 2;
+			}
+
+			.error__title-content {
+				font-size: 20px;
+				font-weight: 300;
+				font-family: "IBM Plex Serif",Big Caslon,serif;
+				color: #000;
+				letter-spacing: .025em;
+				line-height: 1.5;
+				margin-bottom: 2rem;
+				max-width: 22.5em;
+			}
+
+			.error__title-button {
+				/*background-color: #eee;
+				padding: 10px;
+				display: inline-block;*/
+			}
+
+			.error__title-button--link {
+				font-family: inherit;
+				font-weight: 200;
+				text-decoration: none;
+				color: #000;
+				padding-left: 10px;
+			}
+
+			.error__title-button--link::after {
+				
+			}
+
+			.error__card {
+				flex: 50%;
+				align-self: center;
+				text-align: center;
+			}
+
+			.error__card-image {
+				height: 400px;
+				width: auto;
+			}
+
+			/*MEDIA QUERIES*/
+			@media (min-width: 1080px){
+				.error {
+				    padding-left: 70px;
+				    padding-right: 70px;
+				    max-width: 1430px;
+				}
+			}
+
+			@media (max-width: 800px) {
+				body {
+					background-position: top right;
+					background-size: 15rem 50rem;
+				}
+
+				.error {
+					align-items: start;
+				}
+			}
+
+			@media (min-width: 375px){
+				.error__title-sub {
+				    font-size: calc(3.273vw + 12.72727px);
+				}
+
+				.error__title-heading {
+				    font-size: calc(7.03vw + 15.63636px);
+				}
+
+				.error__title-content {
+					font-size: calc(.485vw + 14.18182px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="error">
+			<div class="error__title">
+				<div class="error__title-heading">404
+				</div>
+				<div class="error__title-sub">Under Construction</div>
+				<div class="error__title-content">We're working hard to make this page available again.</div>
+				<div class="error__title-button">
+					<svg width="6" height="10" fill="currentColor">
+						<path d="M5.5 5L.8 9.8 0 9l3.9-4L0 1 .8.2l3.9 4 .8.8z" opacity=".5"></path>
+					</svg>
+					<a class="error__title-button--link" href="index.html">Go Home</a>
+				</div>
+			</div>
+			<!-- <div class="error__card"> -->
+				<!-- <img class="error__card-image"src="construction.svg" alt="Website Under Construction"> -->
+			<!-- </div> -->
+      	</div>
+	</body>
+</html>
