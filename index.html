@@ -133,6 +133,37 @@
       nav a {
         display: inline-block;
       }
+      
+      .navigation {
+        position: relative;
+      }
+
+      .navigation:hover .navigation-content{
+        opacity: 1;
+        top: 4rem;
+        width: 215px;
+      }
+
+      .navigation-content{
+        text-decoration: none;
+        text-transform: uppercase;
+        z-index: 1;
+        position: absolute;
+        top: -3rem;
+        left: 22rem;
+        display: inline-grid;
+        background-color: #39284e;
+        width: 86px;
+        opacity: 0;
+        transition: .3s;
+      }
+
+      .navigation-content a {
+        padding: 10px;
+        text-align: left;
+        font-size: 13px;
+        
+      }
 
       #footertext ul {
         font-size: 14px;
@@ -171,7 +202,14 @@
         <a href="#shop">EXCLUSIVE DEALS</a>
         <a href="#shop">ELIGIBLE PRINTERS</a>
         <a href="product.html">SHOP</a>
-        <a href="index.html" class="active">HOME</a>
+        <div class="navigation">
+          <a href="index.html" class="navigation-link active">HOME</a>
+          <div class="navigation-content">
+            <a href="" class="">About Us</a>
+            <a href="" class="">How It Works</a>
+            <a href="" class="">FAqs</a>
+          </div>
+        </div>
       </nav>
       <div id="heropic">
         <img src="heropic.png" alt="15% OFF" />
